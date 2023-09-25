@@ -41,7 +41,7 @@ export default function Home() {
 						fakeData.map(
 							(data) => (
 								<>
-									<button className="nav-link" id={`nav-${data.id}-tab`} data-bs-toggle="tab" data-bs-target={`#nav-${data.id}`} type="button" role="tab" aria-controls="nav-profile" aria-selected="false">{data.name}</button>
+									<button key={data.id} className="nav-link" id={`nav-${data.id}-tab`} data-bs-toggle="tab" data-bs-target={`#nav-${data.id}`} type="button" role="tab" aria-controls="nav-profile" aria-selected="false">{data.name}</button>
 								</>
 							)
 						)
@@ -54,7 +54,7 @@ export default function Home() {
 					fakeData.map(
 						(data) => (
 							<>
-								<div className="tab-pane fade" id={`nav-${data.id}`} role="tabpanel" aria-labelledby={`nav-${data.id}-tab`} tabIndex="0">
+								<div key={data.id} className="tab-pane fade" id={`nav-${data.id}`} role="tabpanel" aria-labelledby={`nav-${data.id}-tab`} tabIndex="0">
 									{data.description}
 								</div>
 							</>

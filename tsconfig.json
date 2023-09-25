@@ -21,6 +21,9 @@
     "paths": {
       "@/*": ["./*"],
       "bootstrap/dist/js/bootstrap" : ["./node_modules/@types/bootstrap/index.d.ts"]
+      //下載    "@types/bootstrap": "^5.2.7"   然後 在這裡設定ts路徑轉至"./node_modules/@types/bootstrap/index.d.ts"
+      //然後 在組件上寫"use client"，再import "bootstrap/dist/js/bootstrap"
+      //記得在layout.ts中  import 'bootstrap/dist/css/bootstrap.min.css';
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrollspy</title>
+    <style>
+        .container {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 20%;
+            height: 100vh;
+            background-color: #eee;
+            position: fixed;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 20px 0;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+            display: block;
+        }
+
+        .sidebar ul li a.active {
+            background-color: #ddd;
+        }
+
+        .content {
+            margin-left: 20%;
+            width: 80%;
+            padding: 20px;
+        }
+
+        .section {
+            height: 100vh;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li><a href="#section1" class="active">Section 1</a></li>
+                <li><a href="#section2">Section 2</a></li>
+                <li><a href="#section3">Section 3</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div id="section1" class="section">Section 1 Content...</div>
+            <div id="section2" class="section">Section 2 Content...</div>
+            <div id="section3" class="section">Section 3 Content...</div>
+        </div>
+    </div>
+
+    <script>
+        const sections = document.querySelectorAll(".section");
+        const navLinks = document.querySelectorAll(".sidebar a");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - sectionHeight / 3 && pageYOffset < sectionTop + sectionHeight - sectionHeight / 3) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href").substr(1) === current) {
+                    link.classList.add("active");
+                }
+            });
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                const target = document.querySelector(e.target.hash);
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

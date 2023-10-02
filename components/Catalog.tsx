@@ -2,12 +2,12 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Mousewheel, Pagination } from 'swiper/modules';
-import mySwiper from './Catalog.module.css'
+import catalog from './Catalog.module.css';
+
 export default function Catalog() {
     return (
         <>
-            <div  className={mySwiper.app} >
-                <div className={mySwiper.container}>
+        
                 <Swiper
                     direction={'vertical'}
                     slidesPerView={1}
@@ -17,21 +17,15 @@ export default function Catalog() {
                         clickable: true,
                     }}
                     modules={[Mousewheel, Pagination]}
-                    className="mySwiper"
+                    className={catalog.swiper}
                 >
-                    <SwiperSlide>Slide 1</SwiperSlide>
-                    <SwiperSlide>Slide 2</SwiperSlide>
-                    <SwiperSlide>Slide 3</SwiperSlide>
-                    <SwiperSlide>Slide 4</SwiperSlide>
-                    <SwiperSlide>Slide 5</SwiperSlide>
-                    <SwiperSlide>Slide 6</SwiperSlide>
-                    <SwiperSlide>Slide 7</SwiperSlide>
-                    <SwiperSlide>Slide 8</SwiperSlide>
-                    <SwiperSlide>Slide 9</SwiperSlide>
+                    <SwiperSlide className={catalog['swiper-slide']}>Slide 1</SwiperSlide>
+                    <SwiperSlide className={catalog['swiper-slide']}>Slide 2</SwiperSlide>
+                    <SwiperSlide className={catalog['swiper-slide']}>Slide 3</SwiperSlide>
+                    <SwiperSlide className={catalog['swiper-slide']}>Slide 4</SwiperSlide>
+                    <SwiperSlide className={catalog['swiper-slide']}>Slide 5</SwiperSlide>
+                    <SwiperSlide className={catalog['swiper-slide']}>Slide 6</SwiperSlide>
                 </Swiper>
-                </div>
-               
-            </div>
         </>
     )
 }

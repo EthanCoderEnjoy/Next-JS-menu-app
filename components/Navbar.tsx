@@ -8,7 +8,7 @@ export default function Navbar() {
 	}, []);   //此方法也可以import BS.js
     return (
         <>
-           <nav className="navbar navbar-expand-lg bg-body-tertiary">
+           <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#">Navbar</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

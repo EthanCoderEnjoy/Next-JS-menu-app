@@ -31,9 +31,8 @@ export default function Home() {
 	];
 	return (
 		<>
-			<Navbar />
-			
-			<Catalog />
+		 <Navbar />
+		 <Catalog />
 		</>
 	)
 }
